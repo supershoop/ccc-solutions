@@ -1,7 +1,15 @@
 cmake_minimum_required(VERSION 3.30)
 project(ccc)
-
 set(CMAKE_CXX_STANDARD 17)
+# Force Debug build
+set(CMAKE_BUILD_TYPE Debug CACHE STRING "Build type" FORCE)
+
+# Debug flags: disable optimizations, keep frame pointers, full debug info
+set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g -fno-omit-frame-pointer -fno-inline -gdwarf-4")
+
+
+
+
 
 add_executable(20s2h 20s2h.cpp)
 add_executable(20s2 20s2.cpp)
@@ -86,3 +94,4 @@ add_executable(cses2162 cses2162.cpp)
 add_executable(cses2163 cses2163.cpp)
 add_executable(cses2168 cses2168.cpp)
 add_executable(cses2169 cses2169.cpp)
+add_executable(cses1164 cses1164.cpp)
